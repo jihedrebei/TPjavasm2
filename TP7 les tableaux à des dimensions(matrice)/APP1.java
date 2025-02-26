@@ -13,7 +13,7 @@ do {
 } while (nc<=0 || nc>=50);
 int[][] m=new int[nl][nc];
 
-System.out.println("emplissez la matrice avec des nombres pairs:");
+System.out.println("Remplissez la matrice avec des nombres pairs:");
 
 for (int i=0;i<nl; i++) {
 for(int j=0;j<nc;j++) {
@@ -30,9 +30,12 @@ do {
     System.out.println("entrez un nombre pair à rechercher:");
     x= Scanner.nextInt();
 } while (x % 2 !=0);
+
 boolean trouve = false;
+
 for(int i=0;i<nl;i++){
 for(int j=0;j<nl; j++){
+
     if(m[i][j] ==x){
         System.out.println("le nombre"+x+"se trouve à la position["+i+"]["+j+"].");
         trouve = true;
@@ -45,4 +48,4 @@ for(int j=0;j<nl; j++){
 Scanner.close();
 }
     }
-
+    
