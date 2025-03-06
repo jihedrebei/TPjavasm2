@@ -22,19 +22,25 @@ for (int i=0;i<nl; i++) {
         M[i][j] = sr.nextInt();
 }
 }
-int somme =0;
-long produit =1;
-//int nombreElements =nl*nc;
+int somme = 0;
+long produit = 1;
+int total = nl * nc;
 
-for(int i=0; i<nl; i++){
-    for(int j=0; j<nc; j++){
-
-    somme=somme + M[i][j];
-    if (M[i][j] !=0){
-    produit=produit*M[i][j];
-    }}
+for (int i = 0; i < nl; i++) {
+    for (int j = 0; j < nc; j++) {
+        somme += M[i][j];
+        produit *= M[i][j];
+    }
 }
+
+double moyenne = (double) somme / total;
+
+System.out.println("La somme des éléments du tableau est : " + somme);
+System.out.println("Le produit des éléments du tableau est : " + produit);
+System.out.println("La moyenne des éléments du tableau est : " + moyenne);
+
+
 sr.close();
 }
-
 }
+

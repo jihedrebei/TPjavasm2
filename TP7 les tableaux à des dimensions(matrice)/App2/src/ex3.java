@@ -35,7 +35,8 @@ for (int i=0;i<nl; i++){
 int min = T[0], max = T[0];
 for (int i= 1; i<nl;i++){
     if (T[i]<min) {min=T[i];}
-    if (T[j]>max) {max= T[j];}
+
+    if (T[i]>max) {max= T[i];}
 }
 
 System.out.println("\nSommes des lignes :");
@@ -45,7 +46,7 @@ for (int i= 0; i <nl; i++){
 }
 System.out.println("somme minimale :"+min);
 System.out.println("somme maximale :"+max);
-sr.close();
+
 
 }
 }
