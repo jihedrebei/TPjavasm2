@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class RechercherRemplacer {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Entrez un texte (max 50 caractères) : ");
+        String ch = scanner.nextLine();
+        while (ch.length() > 50) {
+            System.out.print("Texte trop long ! Réessayez : ");
+            ch = scanner.nextLine();
+        }
+        System.out.print("Entrez le mot à remplacer (max 10 caractères) : ");
+        String mot1 = scanner.nextLine();
+        while (mot1.length() > 10) {
+            System.out.print("Mot trop long ! Réessayez : ");
+            mot1 = scanner.nextLine();
+        }
+
+        System.out.print("Entrez le mot de remplacement (max 10 caractères) : ");
+        String mot2 = scanner.nextLine();
+        while (mot2.length() > 10) {
+            System.out.print("Mot trop long ! Réessayez : ");
+            mot2 = scanner.nextLine();
+        }
+
+        StringBuffer sb = new StringBuffer(ch);
+        int index = sb.indexOf(mot1);
+        while (index != -1) {
+            sb.replace(index, index + mot1.length(), mot2);
+            index = sb.indexOf(mot1, index + mot2.length());
+        }
+
+        System.out.println("Texte modifié : " + sb.toString());
+
+        scanner.close();
+    }
+}

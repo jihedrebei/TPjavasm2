@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class CapitalizeWords {
+    public static String capitalizeWords(String ch) {
+        String[] words = ch.split(" ");
+        StringBuilder result = new StringBuilder();
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                result.append(Character.toUpperCase(word.charAt(0)))
+                      .append(word.substring(1))
+                      .append(" ");
+            }
+        }
+        return result.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String ch;
+        do {
+            System.out.print("Entrez une chaîne de caractères (max 20 caractères) : ");
+            ch = scanner.nextLine();
+        } while (ch.length() > 20);
+        
+        System.out.println("Texte transformé : " + capitalizeWords(ch));
+        scanner.close();
+    }
+}

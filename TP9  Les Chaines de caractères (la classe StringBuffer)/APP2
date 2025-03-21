@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ShiftCipher {
+    public static String shiftCipher(String ch) {
+        StringBuilder result = new StringBuilder();
+        for (char c : ch.toCharArray()) {
+            if (c >= 'a' && c <= 'z') {
+                result.append((char) (((c - 'a' + 3) % 26) + 'a'));
+            } else if (c >= 'A' && c <= 'Z') {
+                result.append((char) (((c - 'A' + 3) % 26) + 'A'));
+            } else {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String ch;
+        do {
+            System.out.print("Entrez une chaîne de caractères (max 30 caractères) : ");
+            ch = scanner.nextLine();
+        } while (ch.length() > 30);
+        
+        System.out.println("Texte codé : " + shiftCipher(ch));
+        scanner.close();
+    }
+}
