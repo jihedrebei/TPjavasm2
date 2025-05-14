@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Application4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Entrez le nombre de lignes (n1 > 0): ");
+        int n1 = lecturex(scanner);
+        System.out.print("Entrez le nombre de colonnes (n2 > 0): ");
+        int n2 = lecturex(scanner);
+        
+        double[][] M = new double[n1][n2];
+        RemplirTAb(M, scanner);
+        
+        System.out.println("Sommes des lignes:");
+        for (int i = 0; i < n1; i++) {
+            double somme = CalculSomme(M, n2, i);
+            System.out.println("Ligne " + (i+1) + ": " + somme);
+        }
+    }
+    
+    public static int lecturex(Scanner scanner) {
+        int n;
+        do {
+            n = scanner.nextInt();
+            if (n <= 0) {
+                System.out.print("Veuillez entrer un entier strictement positif: ");
+            }
+        } while (n <= 0);
+        return n;
+    }
+    
+    public static void RemplirTAb(double[][] M, Scanner scanner) {
+        System.out.println("Remplissage de la matrice:");
+        for (int i = 0; i < M.length; i++) {
+            for (int j = 0; j < M[i].length; j++) {
+                System.out.print("M[" + (i+1) + "][" + (j+1) + "]: ");
+                M[i][j] = scanner.nextDouble();
+            }
+        }
+    }
+    
+    public static double CalculSomme(double[][] M, int n2, int indiceLigne) {
+        double somme = 0;
+        for (int j = 0; j < n2; j++) {
+            somme += M[indiceLigne][j];
+        }
+        return somme;
+    }
+}

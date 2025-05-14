@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class VerbeGroupe {
+public class verbe {
 
    
     public static boolean EstInf(String verbe) {
