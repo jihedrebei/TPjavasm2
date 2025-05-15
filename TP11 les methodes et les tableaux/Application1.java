@@ -5,10 +5,8 @@ public class Application1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-
         System.out.print("Entrez la taille du tableau (n > 0): ");
         int n = lecturexN(scanner);
-        
 
         int[] T = new int[n];
         RemplirTab(T, scanner);
